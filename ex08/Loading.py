@@ -48,4 +48,3 @@ def ft_tqdm(lst: range) -> None:
         print_count(i, length)
         sys.stdout.flush()
         yield
-    return []
