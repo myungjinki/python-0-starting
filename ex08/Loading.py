@@ -21,6 +21,8 @@ def print_status_bar(i, len):
     """Print status bar of progress"""
 
     column = os.get_terminal_size().columns - LEN
+    if column < 0:
+        column = 1
     ret = "█" * int(column * i / len)
     write(f"|{ret:{column}s}| ")
 
