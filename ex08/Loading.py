@@ -14,15 +14,15 @@ def print_percentage(i, len):
     """Print percentage of progress"""
 
     res = int(i / len * 100)
-    write("%d%%" % res)
+    write(f"{res}%")
 
 
 def print_status_bar(i, len):
     """Print status bar of progress"""
 
     column = os.get_terminal_size().columns - LEN
-    ret = "=" * int(column * i / len)
-    write(f"|[{ret:{column}s}]| ")
+    ret = "█" * int(column * i / len)
+    write(f"|{ret:{column}s}| ")
 
 
 def print_count(i, len):
