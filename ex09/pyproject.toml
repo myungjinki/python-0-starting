@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ft_package"
+version = "0.0.1"
+authors = [
+  { name = "mki" },
+  { email = "mki@student.42seoul.kr" },
+]
+license = {text = "MIT"}
+description = "A small test package"
+readme = "README.md"
+requires-python = ">=3.10"
+urls = {Home-page = "https://github.com/mki/ft_package"}
