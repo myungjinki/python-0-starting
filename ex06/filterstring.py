@@ -6,7 +6,8 @@ from ft_filter import ft_filter
 def filterstring(string, length):
     """a list of words from S that have a length greater than N."""
 
-    return ft_filter(lambda x: len(x) > length, [word for word in string.split()])
+    lst = [word for word in string.split()]
+    return ft_filter(lambda x: len(x) > length, lst)
 
 
 def main():
