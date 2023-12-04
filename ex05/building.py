@@ -1,12 +1,10 @@
 import sys
 
 
-sys.tracebacklimit = 0
-
-
 def building(text):
     """This function prints the number of upper letters, lower letters,"""
 
+    sys.tracebacklimit = 0
     if not isinstance(text, str):
         raise AssertionError("argument is not a string")
     if len(text) == 0:
@@ -48,6 +46,7 @@ def main():
     https://docs.python.org/3/library/io.html?highlight=readlines#i-o-base-classes
     """
 
+    sys.tracebacklimit = 0
     if len(sys.argv) == 1:
         try:
             print("What is the text to count?")

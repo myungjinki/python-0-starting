@@ -1,9 +1,6 @@
 import sys
 
 
-sys.tracebacklimit = 0
-
-
 def whatis(n):
     """This function prints whether the given integer is even or odd."""
 
@@ -16,6 +13,7 @@ def whatis(n):
 def main():
     """This function is the main function."""
 
+    sys.tracebacklimit = 0
     if len(sys.argv) == 1:
         sys.exit(1)
     elif len(sys.argv) > 2:

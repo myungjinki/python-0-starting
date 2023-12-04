@@ -1,8 +1,6 @@
 import os
 import sys
 
-LEN = 40
-
 
 def write(str):
     """sys.stdout.write(str)"""
@@ -20,6 +18,7 @@ def print_percentage(i, len):
 def print_status_bar(i, len):
     """Print status bar of progress"""
 
+    LEN = 40
     column = os.get_terminal_size().columns - LEN
     if column < 0:
         column = 1
