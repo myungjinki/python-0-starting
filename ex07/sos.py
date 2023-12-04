@@ -1,3 +1,8 @@
+import sys
+
+
+sys.tracebacklimit = 0
+
 # https://en.wikipedia.org/wiki/Morse_code
 NESTED_MORSE = {
     " ": "/ ",
@@ -68,11 +73,13 @@ NESTED_MORSE = {
 
 def sos(morse_code):
     """Convert morse code to text."""
+
     return "".join([NESTED_MORSE[char] for char in morse_code])
 
 
 def ismorse(morse_code):
     """Check if the morse code is valid."""
+
     for char in morse_code:
         if char not in NESTED_MORSE.keys():
             return False
@@ -81,16 +88,12 @@ def ismorse(morse_code):
 
 def main():
     """Main function."""
-    import sys
 
     if len(sys.argv) != 2:
-        print("AssertionError: the arguments are bad")
-        sys.exit(1)
+        raise AssertionError("the arguments are bad")
     morse_code = sys.argv[1]
     if not ismorse(morse_code):
-        print(morse_code)
-        print("AssertionError: the arguments are bad")
-        sys.exit(1)
+        raise AssertionError("the arguments are bad")
     print(sos(morse_code))
 
 

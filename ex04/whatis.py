@@ -1,11 +1,12 @@
 import sys
 
 
+sys.tracebacklimit = 0
+
+
 def whatis(n):
     """This function prints whether the given integer is even or odd."""
 
-    if not isinstance(n, int):
-        raise AssertionError("argument is not an integer")
     if n % 2 == 0:
         print("I'm Even.")
     else:
@@ -18,13 +19,10 @@ def main():
     if len(sys.argv) == 1:
         sys.exit(1)
     elif len(sys.argv) > 2:
-        print("AssertionError: more than one argument is provided")
-        sys.exit(1)
-    try:
-        whatis(int(sys.argv[1]))
-    except ValueError:
-        print("AssertionError: argument is not an integer")
-        sys.exit(1)
+        raise AssertionError("more than one argument is provided")
+    if not sys.argv[1].isdigit():
+        raise AssertionError("argument is not an integer")
+    whatis(int(sys.argv[1]))
 
 
 main()

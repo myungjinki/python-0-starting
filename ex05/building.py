@@ -1,6 +1,9 @@
 import sys
 
 
+sys.tracebacklimit = 0
+
+
 def building(text):
     """This function prints the number of upper letters, lower letters,"""
 
@@ -50,16 +53,13 @@ def main():
             print("What is the text to count?")
             input_text = sys.stdin.readline()
         except EOFError:
-            print("\nKeyboardInterrupt")
-            sys.exit(1)
+            raise KeyboardInterrupt
         except KeyboardInterrupt:
-            print("\nKeyboardInterrupt")
-            sys.exit(1)
+            raise KeyboardInterrupt
     elif len(sys.argv) == 2:
         input_text = sys.argv[1]
     elif len(sys.argv) > 2:
-        print("AssertionError: more than one argument is provided")
-        sys.exit(1)
+        raise AssertionError("more than one argument is provided")
     building(input_text)
 
 

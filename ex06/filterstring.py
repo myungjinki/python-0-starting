@@ -3,6 +3,9 @@ import sys
 from ft_filter import ft_filter
 
 
+sys.tracebacklimit = 0
+
+
 def filterstring(string, length):
     """a list of words from S that have a length greater than N."""
 
@@ -14,15 +17,13 @@ def main():
     """Main function."""
 
     if len(sys.argv) != 3:
-        print("AssertionError: the arguments are bad")
-        sys.exit(1)
+        raise AssertionError("the arguments are bad")
     s = sys.argv[1]
     n = sys.argv[2]
     try:
         length = int(n)
     except ValueError:
-        print("AssertionError: the arguments are bad")
-        sys.exit(1)
+        raise AssertionError("the arguments are bad")
     print(filterstring(s, length))
 
 
