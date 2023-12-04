@@ -17,4 +17,4 @@ print(result)
 # https://docs.python.org/3/library/datetime.html
 # https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
 day = datetime.datetime.now()
-print(f"{day:%b %d, %Y}")
+print(f"{day:%b %d %Y}")
